@@ -20,7 +20,8 @@ namespace CarShop.Data.Mocks
                         Price = 37000, 
                         IsFavourite = true, 
                         Available = 5,
-                        Category = _carsCategory.Get(1)
+                        Category = _carsCategory.Get(1),
+                        ImagePath = "/img/tesla-model-3.png"
                     },
                     new Car
                     {
@@ -28,7 +29,8 @@ namespace CarShop.Data.Mocks
                         Price = 45000, 
                         IsFavourite = true, 
                         Available = 5,
-                        Category = _carsCategory.Get(1)
+                        Category = _carsCategory.Get(1),
+                        ImagePath = "/img/tesla-model-s.jpg"
                     },
                     new Car
                     {
@@ -36,15 +38,17 @@ namespace CarShop.Data.Mocks
                         Price = 40000,
                         IsFavourite = true,
                         Available = 20,
-                        Category = _carsCategory.Get(2)
+                        Category = _carsCategory.Get(2),
+                        ImagePath = "/img/bmw-x8.jpg"
                     },
                     new Car
                     {
-                        Name = "Mersedes S Class",
+                        Name = "Mercedes S Class",
                         Price = 40000,
                         IsFavourite = true,
                         Available = 20,
-                        Category = _carsCategory.Get(2)
+                        Category = _carsCategory.Get(2),
+                        ImagePath = "/img/mercedes-s-class.jpg"
                     }
                 };
             }
