@@ -19,14 +19,32 @@ namespace CarShop.Data.Mocks
                         Name = "Tesla Model 3", 
                         Price = 37000, 
                         IsFavourite = true, 
-                        Available = 5
+                        Available = 5,
+                        Category = _carsCategory.Get(1)
                     },
                     new Car
                     {
-                        Name = "",
+                        Name = "Tesla Model S", 
+                        Price = 45000, 
+                        IsFavourite = true, 
+                        Available = 5,
+                        Category = _carsCategory.Get(1)
+                    },
+                    new Car
+                    {
+                        Name = "BMW X 5",
                         Price = 40000,
                         IsFavourite = true,
-                        Available = 20
+                        Available = 20,
+                        Category = _carsCategory.Get(2)
+                    },
+                    new Car
+                    {
+                        Name = "Mersedes S Class",
+                        Price = 40000,
+                        IsFavourite = true,
+                        Available = 20,
+                        Category = _carsCategory.Get(2)
                     }
                 };
             }
