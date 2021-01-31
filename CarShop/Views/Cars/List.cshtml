@@ -1,0 +1,28 @@
+﻿@using CarShop.ViewModels
+@model CarListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Все автомобили</title>
+</head>
+<body>
+<div>
+    <h2>Категория: @Model.CurrentCategory</h2>
+    @{
+        foreach (var car in Model.GetAllCars)
+        {
+            <div>
+                <p>Модель: @car.Name</p>
+                <p>Цена: @car.Price.ToString("c")</p>
+            </div>
+        }
+    }
+</div>
+</body>
+</html>
