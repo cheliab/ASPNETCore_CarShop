@@ -17,6 +17,8 @@ namespace CarShop.Controllers
 
         public ViewResult List()
         {
+            ViewBag.Title = "Каталог автомобилей";
+            
             var viewModel = new CarListViewModel
             {
                 CurrentCategory = "Автомобили",
