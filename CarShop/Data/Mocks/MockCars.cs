@@ -58,7 +58,7 @@ namespace CarShop.Data.Mocks
             }
         }
 
-        public IEnumerable<Car> GetFavoriteCars { get; set; }
+        public IEnumerable<Car> GetFavoriteCars { get; }
         public Car GetObjectCar(int id)
         {
             throw new System.NotImplementedException();
