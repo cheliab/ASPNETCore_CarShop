@@ -1,6 +1,7 @@
 using CarShop.Data;
 using CarShop.Data.Interfaces;
 using CarShop.Data.Mocks;
+using CarShop.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +27,8 @@ namespace CarShop
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContent>(options => options.UseSqlServer(connection));
             
-            services.AddTransient<IAllCars, MockCars>();
-            services.AddTransient<ICarsCategory, MockCategory>();
+            services.AddTransient<IAllCars, CarRepository>();
+            services.AddTransient<ICarsCategory, CategoryRepository>();
             
             services.AddMvc();
         }
@@ -45,6 +46,12 @@ namespace CarShop
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContent>();
+                DbInitData.Initial(context);
+            }
         }
     }
 }

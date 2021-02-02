@@ -11,9 +11,7 @@ namespace CarShop.Data
             
         public AppDbContent(DbContextOptions<AppDbContent> options) : base(options)
         {
-            
+            Database.EnsureCreated();
         }
-        
-        
     }
 }
